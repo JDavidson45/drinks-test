@@ -19,7 +19,7 @@ module.exports = app
 if (process.env.NODE_ENV === 'test') {
   after('close the session store', () => sessionStore.stopExpiringSessions())
 }
-
+app.set('port', PORT)
 /**
  * In your development environment, you can keep all of your
  * app's secret API keys in a file called `secrets.js`, in your project
@@ -99,8 +99,8 @@ const createApp = () => {
 
 const startListening = () => {
   // start listening (and create a 'server' object representing our server)
-  const server = app.listen(process.env.PORT || PORT, () =>
-    console.log(`Mixing it up on port ${process.env.PORT || PORT}`)
+  const server = app.listen(PORT, () =>
+    console.log(`Mixing it up on port ${PORT}`)
   )
 
   // set up our socket control cente
