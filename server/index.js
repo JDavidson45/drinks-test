@@ -103,7 +103,7 @@ const startListening = () => {
     console.log(`Mixing it up on port ${process.env.PORT}`)
   )
 
-  // set up our socket control center
+  // set up our socket control cente
   const io = socketio(server)
   require('./socket')(io)
 }
